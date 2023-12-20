@@ -11,8 +11,5 @@ django.setup()
 
 # Now import your models and use them
 from blog.models import Post
-
-print(Post.objects.filter(author__username='rishabhAdmin'))
-print(Post.objects.filter(publish__year=2023))
-print(Post.objects.filter(title__startswith='blog').exclude(publish__year=2022))
-print(Post.objects.order_by('-title'))
+from django.core.mail import send_mail
+send_mail('Django mail','This e-mail was sent with Django.','saraswat.rishabh30@gmail.com',['saraswat.rishabh30@gmail.com'],fail_silently=False)
